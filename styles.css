@@ -1281,76 +1281,72 @@ footer {
 
     /* --- Events Section --- */
     .envelope-closed {
-        max-width: 320px;
+        max-width: 290px;
     }
 
     .ceremony-card {
-        transform: translateX(20px);
+        transform: translateX(45px);
         margin-top: -180px;
-        width: 75%;
-        max-width: 240px;
+        width: 65%;
+        max-width: 210px;
     }
 
     .carta-card-ceremony .carta-content {
-        padding: 0.5rem 0.6rem 0.3rem 0.6rem;
+        padding: 0.5rem 0.5rem 0.2rem 0.5rem;
         gap: 0;
     }
 
     .carta-card-ceremony .event-title {
-        font-size: 0.75rem;
-        letter-spacing: 1.5px;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
     }
 
     .carta-card-ceremony .event-time {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .carta-card-ceremony .event-location {
-        font-size: 0.8rem;
-        margin-bottom: 0.2rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.1rem;
     }
 
     .carta-card-ceremony .church-icon {
-        width: 40px;
-    }
-
-    .carta-card-ceremony .event-icon-img {
-        margin: 0;
+        width: 35px;
     }
 
     .carta-card-ceremony .btn-location-outline {
-        font-size: 0.7rem;
-        padding: 4px 18px;
+        font-size: 0.65rem;
+        padding: 3px 14px;
     }
 
     .party-card {
-        width: 55%;
-        max-width: 160px;
-        margin-left: -30px;
-        margin-top: -15px;
-        padding: 1.2rem 0.8rem;
+        width: 50%;
+        max-width: 150px;
+        margin-left: -50px;
+        margin-top: -10px;
+        padding: 1rem 0.7rem;
     }
 
     .event-title-white {
-        font-size: 0.75rem;
-        letter-spacing: 1.5px;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
     }
 
     .event-time-white {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .event-location-white {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .party-card .party-icon {
-        width: 50px;
+        width: 40px;
     }
 
     .btn-location-white {
-        font-size: 0.75rem;
-        padding: 5px 20px;
+        font-size: 0.7rem;
+        padding: 4px 16px;
     }
 
     /* --- Dresscode Section --- */
@@ -1448,18 +1444,18 @@ footer {
     }
 
     .envelope-closed {
-        max-width: 280px;
+        max-width: 260px;
     }
 
     .ceremony-card {
-        transform: translateX(15px);
+        transform: translateX(35px);
         margin-top: -160px;
-        max-width: 210px;
+        max-width: 190px;
     }
 
     .party-card {
-        max-width: 140px;
-        margin-left: -25px;
+        max-width: 130px;
+        margin-left: -40px;
     }
 
     .dresscode-badge-img {
