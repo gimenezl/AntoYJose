@@ -1,0 +1,1226 @@
+﻿/* --- Variables & Reset --- */
+:root {
+    --bg-color: #f9f7f2;
+    /* Crema suave */
+    --text-color: #333333;
+    --accent-color: #4a4a4a;
+    --green-accent: #556b2f;
+    --gold: #c5a059;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-speed: 0.5s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: #f9f7f2;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Utilities --- */
+.section {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.content-wrapper {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.placeholder-img {
+    background-color: #e0e0e0;
+    color: #757575;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+/* --- Section 2: Welcome (Opened Envelope) --- */
+.welcome-section {
+    padding-top: 0.5rem;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 0.5rem;
+}
+
+.welcome-header {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Leaf Decorations */
+.leaf-decoration {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    opacity: 0.85;
+}
+
+.leaf-top {
+    top: 60px;
+    right: -10px;
+    transform: scaleY(-1) rotate(30deg);
+}
+
+.leaf-bottom {
+    bottom: 125px;
+    left: -40px;
+    transform: rotate(0deg);
+}
+
+/* Typography: Great Vibes */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap');
+@import url(https://db.onlinewebfonts.com/c/af9dbbacda3360d434dcce8ab8b6c38f?family=Hello+Paris+Serif+Regular);
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap');
+
+.welcome-section .welcome-header .main-names {
+    font-size: 5rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+}
+
+.welcome-section .initial-letter.a-letter {
+    font-family: "Hello Paris Serif Regular", serif;
+    font-size: 8.5rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.welcome-section .initial-letter.j-letter {
+
+    font-size: 6.5rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-right: -12px;
+}
+
+.welcome-section .rest-letter {
+    font-family: "Imperial Script", cursive;
+    font-size: 5.5rem;
+    font-weight: 400;
+}
+
+.welcome-section .ampersand {
+    font-family: "Imperial Script", cursive;
+    font-size: 3.8rem;
+    margin: 1rem;
+}
+
+.welcome-date {
+    font-family: var(--font-serif);
+    color: var(--text-color);
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+/* Envelope Display - New Design with sobre.png */
+.envelope-display {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: 0.1rem auto 0.2rem auto;
+    /* Reduced margins */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /* Keep it low so sections below with higher z-index can clear it */
+}
+
+.envelope-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    /* Allow the photo to be visible */
+}
+
+/* Back envelope - Bottom layer */
+.envelope-back {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+/* Photo emerging from envelope - Middle layer */
+.photo-container {
+    position: absolute;
+    bottom: 25%;
+    /* Start higher inside the envelope */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55%;
+    z-index: 2;
+    /* Above back envelope, below front flap */
+    transition: bottom 1.5s ease-out;
+    /* Animate bottom property to move upward */
+}
+
+/* Front envelope flap - Top layer */
+.envelope-front {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    /* On top of everything to cover the photo */
+    pointer-events: none;
+    /* Allow clicks to pass through if needed */
+}
+
+.couple-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Music Player - Complete */
+.music-player {
+    text-align: center;
+    margin-top: -80px;
+    margin-bottom: 5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.music-text {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 90%;
+    margin: 0 auto 0.8rem auto;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #d0d0d0;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #000000;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* Player Controls Container */
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Side Buttons (Previous/Next) - Decorative */
+.control-btn-side {
+    background: none;
+    border: none;
+    cursor: not-allowed;
+    color: #000000;
+    opacity: 0.6;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Play/Pause Button */
+.play-pause-btn-main {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    transition: transform 0.2s, opacity 0.3s;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+}
+
+.play-pause-btn-main:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.play-pause-btn-main svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Repeat Button - Decorative */
+.control-btn-repeat {
+    background: none;
+    border: none;
+    cursor: not-allowed;
+    color: #000000;
+    opacity: 0.3;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* --- Section 3: Formal Card --- */
+.card-section {
+    background-color: transparent;
+    border-top: none;
+    border-bottom: none;
+    padding-top: 0.1rem;
+    padding-bottom: 0;
+    margin-bottom: -2rem;
+}
+
+.formal-card {
+    padding: 3rem 1.5rem;
+    border: none;
+    margin: 1rem;
+    box-shadow: none;
+}
+
+/* Image Card Overrides */
+/* Image Card Overrides */
+.image-card-container {
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* Ensure container is a positioning context */
+    overflow: hidden;
+    /* rounded corners for the whole card */
+    border-radius: 8px;
+    /* match image border radius */
+}
+
+.card-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* Behind text */
+    height: 100%;
+    /* Force fill container height */
+    object-fit: cover;
+    /* Cover the area */
+    object-fit: cover;
+    /* Cover the area */
+}
+
+.card-img-shadow {
+    width: 85%;
+    /* Reduced width */
+    max-width: 350px;
+    /* Max width constraint */
+    margin: 0 auto;
+    /* Center alignment */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    mix-blend-mode: multiply;
+    /* Blend white background */
+}
+
+.ceremony-btn {
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Carta Card (Carta.png background) --- */
+.carta-card {
+    position: relative;
+    display: inline-block;
+    width: 95%;
+    max-width: 420px;
+    overflow: visible;
+    background-image: url('Carta.png');
+    background-size: cover;
+    /* Back to cover for better quality */
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none !important;
+    box-shadow: none !important;
+    /* Remove shadow to avoid border-like look */
+}
+
+.carta-bg {
+    display: none;
+    /* Hidden because we use background-image now */
+}
+
+.carta-content {
+    position: relative;
+    /* Changed from absolute to give height to parent */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem 2.5rem 1.5rem;
+    /* Increased bottom padding to contain button better */
+    gap: 12px;
+    /* Increased gap for better spacing */
+}
+
+.carta-card .bible-verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-color);
+    margin-bottom: 0.1rem;
+}
+
+.carta-card .bible-reference {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+    font-weight: 400;
+}
+
+.carta-card .names-container {
+    margin: 0.15rem 0;
+}
+
+.carta-card .bride-name,
+.carta-card .groom-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text-color);
+    margin: 0.1rem 0;
+    letter-spacing: 1px;
+}
+
+.carta-card .conjunction {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #666;
+    margin: 0.05rem 0;
+}
+
+.carta-card .wedding-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #666 !important;
+    margin-top: 0.15rem;
+}
+
+/* Ceremony-specific carta card */
+.carta-card-ceremony {
+    width: 100%;
+    max-width: 340px;
+}
+
+.carta-card-ceremony .carta-content {
+    padding: 0.8rem 1rem 0.3rem 1rem;
+    text-align: center;
+    align-items: center;
+    gap: 0px;
+}
+
+.carta-card-ceremony .event-title {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    letter-spacing: 2.5px;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.carta-card-ceremony .event-time {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0.2rem;
+    color: #000;
+    letter-spacing: 1.5px;
+}
+
+.carta-card-ceremony .event-location {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.carta-card-ceremony .church-icon {
+    width: 65px;
+    /* Ajustado para caber en la carta */
+    height: auto;
+    opacity: 0.85;
+}
+
+.carta-card-ceremony .event-icon-img {
+    margin: 2px 0;
+}
+
+.carta-card-ceremony .btn-location-outline {
+    margin-top: 0;
+    font-size: 0.8rem;
+    padding: 6px 25px;
+    border-radius: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1px;
+    background: transparent;
+    color: #000;
+    border: 1.5px solid #000;
+    transition: all 0.4s ease;
+}
+
+.carta-card-ceremony .btn-location-outline:hover {
+    background: var(--text-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Overlay content styling */
+.card-content-overlay {
+    position: relative;
+    z-index: 1;
+    /* On top of image */
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem 1rem;
+    /* Reduced from 2rem 1.5rem */
+    /* Reduced from 3rem */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bible Verse Styling */
+.bible-verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    /* Reduced from 1.8rem */
+    font-weight: 400;
+    /* Lighter weight */
+    line-height: 1.3;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+    /* Tighter padding */
+    font-style: italic;
+}
+
+.bible-reference {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    /* Reduced from 1.5rem */
+    font-weight: 400;
+}
+
+/* Names Container */
+.names-container {
+    margin: 0.5rem 0;
+    /* Reduced from 1rem */
+}
+
+.bride-name,
+.groom-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    letter-spacing: 1px;
+}
+
+.conjunction {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #666;
+    margin: 0.8rem 0;
+}
+
+.wedding-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    margin-top: 1rem;
+    /* Reduced from 1.5rem */
+}
+
+/* Legacy styles kept for other sections */
+.intro-text {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.main-names {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.verse {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-family: var(--font-serif);
+}
+
+.date-highlight {
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+
+/* --- Section 4: Events --- */
+.events-section {
+    min-height: auto;
+    padding: 0 1rem 1.5rem 1rem;
+    position: relative;
+    margin-top: -2rem;
+}
+
+.events-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sobre cerrado de fondo */
+.envelope-closed {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.closed-envelope-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tarjeta Ceremonia (rectangular blanca) */
+.ceremony-card {
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 370px;
+    transform: translateX(65px);
+    /* Shifted to the right as original layout */
+    margin-top: -300px;
+    margin-bottom: 0;
+}
+
+.event-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.event-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.event-location {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.event-icon-img {
+    margin: 0.5rem 0;
+    /* Reduced from 1.2rem */
+}
+
+.church-icon,
+.party-icon {
+    width: 80px;
+    height: auto;
+    opacity: 0.8;
+    /* Prevent broken image borders */
+    color: transparent;
+    border: none;
+    outline: none;
+}
+
+.party-card .party-icon {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+.btn-location-outline {
+    display: inline-block;
+    padding: 8px 28px;
+    border: 1.5px solid var(--text-color);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.3s;
+    text-transform: capitalize;
+}
+
+.btn-location-outline:hover {
+    background: var(--text-color);
+    color: #fff;
+}
+
+/* Tarjeta Fiesta (ovalada verde) */
+.party-card {
+    background: #8c8866;
+    /* Same green as the envelope */
+    border-radius: 50%;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    margin-top: -35px;
+    /* Original overlap with ceremony card */
+    margin-right: 0;
+    margin-left: -60px;
+    /* Shifted to the left as original layout */
+    width: 70%;
+    max-width: 240px;
+    aspect-ratio: 1 / 1.35;
+    /* Original taller oval shape */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-title-white {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.event-time-white {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.event-location-white {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.btn-location-white {
+    display: inline-block;
+    padding: 8px 35px;
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid #fff;
+    border-radius: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.4s ease;
+    text-transform: capitalize;
+    margin-top: 0.5rem;
+}
+
+.btn-location-white:hover {
+    background: var(--text-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Section 5: Dress Code (Overlapping Cards) --- */
+.dress-code-section {
+    min-height: auto;
+    padding: 2rem 1rem;
+}
+
+.dresscode-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* Top row: the two dresscode cards */
+.dresscode-cards-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Dresscode Badge (left, medium size, positioned higher) */
+.dresscode-badge {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 0;
+}
+
+.dresscode-badge-img {
+    width: 210px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Dresscode Details Card (right, largest, overlapping badge) */
+.dresscode-details {
+    position: relative;
+    z-index: 1;
+    margin-left: -35px;
+    flex-shrink: 0;
+}
+
+.dresscode-details-img {
+    width: 280px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Pinterest Pin Card (bottom-left, smallest, no overlap) */
+.dresscode-pin {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 3;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    margin-top: 0.8rem;
+    margin-right: auto;
+    margin-left: 1.5rem;
+}
+
+.dresscode-pin:hover {
+    transform: scale(1.03);
+}
+
+.pinterest-pin-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 0.8rem 0.7rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    width: 90px;
+    cursor: pointer;
+}
+
+.pinterest-icon {
+    margin-bottom: 0.4rem;
+}
+
+.pinterest-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.pin-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+.pin-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.55rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* --- Section 7: Gifts --- */
+.gifts-section {
+    padding: 1.5rem 1rem;
+}
+
+/* Gifts Carta Card */
+.carta-card-gifts {
+    width: 95%;
+    max-width: 420px;
+}
+
+.carta-card-gifts .carta-content {
+    padding: 2.5rem 1.8rem;
+    gap: 8px;
+}
+
+.gift-emotional {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+}
+
+.gift-value-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.gift-thanks {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+.gift-alias {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    letter-spacing: 0.5px;
+}
+
+/* --- Solo Adultos --- */
+.no-kids-section {
+    min-height: auto;
+    padding: 1rem 1rem;
+}
+
+.no-kids-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.no-kids-icon {
+    width: 45px;
+    height: auto;
+    opacity: 0.75;
+}
+
+.no-kids-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #666;
+    letter-spacing: 0.5px;
+}
+
+/* --- Section 8: Countdown --- */
+.countdown-section {
+    background-color: rgba(197, 186, 166, 0.15);
+    border: 1px solid rgba(197, 186, 166, 0.25);
+    border-radius: 12px;
+    color: var(--text-color);
+    min-height: auto;
+    padding: 2rem 2rem;
+    margin: 0.5rem 1.5rem;
+}
+
+.countdown-section h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-box span:first-child {
+    font-size: 3rem;
+    font-family: var(--font-serif);
+    color: var(--text-color);
+}
+
+.time-box .label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    color: var(--text-color);
+}
+
+.countdown-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #666;
+    margin-top: 1.5rem;
+}
+
+/* --- Section 9: RSVP (Envelope with Carta) --- */
+.rsvp-section {
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+.rsvp-envelope-display {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card inside envelope */
+.rsvp-card-container {
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    z-index: 2;
+}
+
+.carta-card-rsvp {
+    width: 100%;
+    max-width: 100%;
+}
+
+.carta-card-rsvp .carta-content {
+    padding: 1.5rem 1rem 1.8rem 1rem;
+    gap: 6px;
+}
+
+.rsvp-title {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+}
+
+.rsvp-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 0.2rem;
+}
+
+.rsvp-deadline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.6rem;
+}
+
+.rsvp-form-btn {
+    display: inline-block;
+    padding: 8px 22px;
+    border: 1.5px solid var(--text-color);
+    border-radius: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.rsvp-form-btn:hover {
+    background: var(--text-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.main-cta-button {
+    background-color: var(--text-color);
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.main-cta-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Premium Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Extra polishing for cards */
+.carta-card {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}

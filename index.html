@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonella & José - Nuestra Boda</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- FUENTE A (Hello Paris Serif Regular) -->
+    <link href="https://db.onlinewebfonts.com/c/af9dbbacda3360d434dcce8ab8b6c38f?family=Hello+Paris+Serif+Regular"
+        rel="stylesheet">
+
+    <!-- FUENTE GENERAL (TT Lovelies Script W10 Regular) -->
+    <link href="https://db.onlinewebfonts.com/c/bf80a5f83b4e976a40c0230bd43eeb1e?family=TT+Lovelies+Script+W10+Regular"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap');
+        @import url(https://db.onlinewebfonts.com/c/af9dbbacda3360d434dcce8ab8b6c38f?family=Hello+Paris+Serif+Regular);
+        @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+    </style>
+    <!-- FUENTE J (Eagle Lake) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="leaf-container" id="leaf-container"></div>
+
+    <!-- SECCIÓN BIENVENIDA -->
+    <section id="welcome" class="section welcome-section">
+        <div class="content-wrapper">
+            <div class="welcome-header">
+
+                <img src="hoja.png" alt="" class="leaf-decoration leaf-top">
+
+                <h1 class="main-names">
+                    <span class="initial-letter a-letter">A</span><span class="rest-letter">ntonella</span>
+
+                    <span class="ampersand">&</span>
+
+                    <span class="initial-letter j-letter">J</span><span class="rest-letter">osé</span>
+                </h1>
+
+                <img src="hoja.png" alt="" class="leaf-decoration leaf-bottom">
+
+                <p class="welcome-date">04.07.2026</p>
+            </div>
+        </div>
+        <div class="envelope-display">
+            <div class="envelope-container">
+                <img src="sobre.png" alt="Sobre verde completo" class="envelope-back">
+                <div class="photo-container">
+                    <img src="foto.jpeg" alt="Foto de la pareja" class="couple-photo">
+                </div>
+                <img src="sobre - copia.png" alt="Solapa del sobre" class="envelope-front">
+            </div>
+        </div>
+
+        <div class="music-player">
+            <p class="music-text">Dale play para escuchar nuestra canción</p>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Player Controls -->
+            <div class="player-controls">
+                <!-- Previous Button (decorative) -->
+                <button class="control-btn-side" disabled>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
+                    </svg>
+                </button>
+
+                <!-- Play/Pause Button (functional) -->
+                <button id="music-toggle" class="play-pause-btn-main" aria-label="Reproducir música">
+                    <svg id="play-icon" width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="11" fill="currentColor" />
+                        <path d="M9 7L17 12L9 17V7Z" fill="#fff" />
+                    </svg>
+                    <svg id="pause-icon" class="hidden" width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="11" fill="currentColor" />
+                        <rect x="9" y="7" width="2" height="10" fill="#fff" />
+                        <rect x="13" y="7" width="2" height="10" fill="#fff" />
+                    </svg>
+                </button>
+
+                <!-- Next Button (decorative) -->
+                <button class="control-btn-side" disabled>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
+                    </svg>
+                </button>
+
+                <!-- Repeat Button (decorative) -->
+                <button class="control-btn-repeat" disabled>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 1l4 4-4 4" />
+                        <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+                        <path d="M7 23l-4-4 4-4" />
+                        <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3 — TARJETA PRINCIPAL -->
+    <section id="main-card" class="section card-section reveal">
+        <div class="content-wrapper">
+            <div class="carta-card fade-in">
+                <div class="carta-content">
+                    <p class="bible-verse">"Nosotros amamos porque él nos amó primero"</p>
+                    <p class="bible-reference">1Jn 4,19</p>
+                    <div class="names-container">
+                        <p class="bride-name">Antonella Gimenez</p>
+                        <p class="conjunction">&</p>
+                        <p class="groom-name">Jose Muzzupappa</p>
+                    </div>
+                    <p class="wedding-date">04/07/2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4 — CEREMONIA Y FIESTA -->
+    <section id="events" class="section events-section reveal">
+        <div class="events-container">
+            <!-- Sobre cerrado de fondo -->
+            <div class="envelope-closed">
+                <img src="sobrecerrado.png" alt="Sobre cerrado" class="closed-envelope-img">
+            </div>
+
+            <!-- Tarjeta Ceremonia (rectangular blanca) -->
+            <div class="ceremony-card">
+                <div class="carta-card carta-card-ceremony">
+                    <div class="carta-content">
+                        <h3 class="event-title">CEREMONIA RELIGIOSA</h3>
+                        <p class="event-time">11:00</p>
+                        <p class="event-location">Parroquia Ntra Sra del Perpetuo Socorro</p>
+                        <div class="event-icon-img">
+                            <img src="iglesia.png" alt="Iglesia" class="church-icon">
+                        </div>
+                        <a href="https://maps.app.goo.gl/YqaRFZV67E7yhW1NA" target="_blank" rel="noopener noreferrer"
+                            class="btn-location-outline">Ubicación</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta Fiesta (ovalada verde) -->
+            <div class="party-card">
+                <h3 class="event-title-white">FIESTA</h3>
+                <p class="event-time-white">13:30</p>
+                <p class="event-location-white">Salón Sind. Luz Y Fuerza ctes.</p>
+                <div class="event-icon-img">
+                    <img src="fiesta.png" alt="Fiesta" class="party-icon">
+                </div>
+                <a href="https://maps.app.goo.gl/kNZsogHBmjwTM8WP7" target="_blank" rel="noopener noreferrer"
+                    class="btn-location-white">Ubicación</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5 — DRESS CODE -->
+    <section id="dress-code" class="section dress-code-section reveal">
+        <div class="dresscode-stack fade-in">
+            <!-- Top row: dresscode cards overlapping -->
+            <div class="dresscode-cards-row">
+                <!-- Dresscode badge (left, higher) -->
+                <div class="dresscode-badge">
+                    <img src="dresscode.png" alt="Dress Code" class="dresscode-badge-img">
+                </div>
+
+                <!-- Dresscode details card (right, largest, overlapping) -->
+                <div class="dresscode-details">
+                    <img src="dresscode2.png" alt="Elegante con un toque verde" class="dresscode-details-img">
+                </div>
+            </div>
+
+            <!-- Pinterest Pin (bottom-left, smallest, no overlap) -->
+            <a href="https://pin.it/1QA7QFv5I" target="_blank" rel="noopener noreferrer" class="dresscode-pin">
+                <div class="pinterest-pin-card">
+                    <div class="pinterest-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                            fill="#E60023">
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="pin-title">Si necesitas inspiración</h3>
+                    <p class="pin-subtitle">(Click aquí)</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 7 — GIFTS -->
+    <section id="gifts" class="section gifts-section reveal">
+        <div class="content-wrapper fade-in">
+            <div class="carta-card carta-card-gifts">
+                <div class="carta-content">
+                    <p class="gift-emotional">Con mucha ilusión organizamos esta fiesta<br>para compartirla con uds.</p>
+                    <p class="gift-emotional">La tarjeta es una forma de ayudarnos a<br>celebrar este nuevo comienzo.
+                    </p>
+                    <p class="gift-value-line">• Valor de la tarjeta $40.000</p>
+                    <p class="gift-alias">Alias: antogimenez123</p>
+                    <p class="gift-thanks">Gracias por ser parte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN — SOLO ADULTOS -->
+    <section class="section no-kids-section reveal">
+        <div class="no-kids-content fade-in">
+            <img src="noninos.png" alt="Solo adultos" class="no-kids-icon">
+            <p class="no-kids-text">Nuestra boda será una celebración pensada exclusivamente
+                para adultos.
+                Agradecemos su comprensión.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 8 — CONTADOR REGRESIVO -->
+    <section id="countdown" class="section countdown-section reveal">
+        <div class="content-wrapper fade-in">
+            <h2>FALTAN</h2>
+            <div id="timer" class="timer-container">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <span class="label">Días</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <span class="label">Hs</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <span class="label">Min</span>
+                </div>
+            </div>
+            <p class="countdown-subtitle">para nuestro gran día</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 9 — CONFIRMACIÓN -->
+    <section id="rsvp" class="section rsvp-section reveal">
+        <div class="rsvp-envelope-display fade-in">
+            <div class="envelope-container">
+                <img src="sobre.png" alt="Sobre verde completo" class="envelope-back">
+                <div class="rsvp-card-container">
+                    <div class="carta-card carta-card-rsvp">
+                        <div class="carta-content">
+                            <h2 class="rsvp-title">CONFIRMAR ASISTENCIA</h2>
+                            <p class="rsvp-subtitle">¡Contanos si vas a venir!</p>
+                            <p class="rsvp-deadline">Confirmar asistencia antes del 01/06/2026</p>
+                            <a href="#" class="rsvp-form-btn">Completar formulario</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="sobre - copia.png" alt="Solapa del sobre" class="envelope-front">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Diseñado con ❤️ para Anto Y José</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
