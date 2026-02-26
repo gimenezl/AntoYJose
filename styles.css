@@ -1224,3 +1224,220 @@ footer {
     box-shadow: none !important;
     background-color: transparent !important;
 }
+
+/* =============================================
+   MOBILE RESPONSIVE — screens ≤ 480px
+   ============================================= */
+@media (max-width: 480px) {
+
+    /* --- Header Names --- */
+    .welcome-section .welcome-header .main-names {
+        font-size: 3.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .welcome-section .initial-letter.a-letter {
+        font-size: 6rem;
+    }
+
+    .welcome-section .initial-letter.j-letter {
+        font-size: 4.5rem;
+        margin-right: -8px;
+    }
+
+    .welcome-section .rest-letter {
+        font-size: 3.8rem;
+    }
+
+    .welcome-section .ampersand {
+        font-size: 2.8rem;
+        margin: 0.5rem;
+    }
+
+    .welcome-date {
+        font-size: 2.2rem;
+    }
+
+    /* --- Leaf Decorations --- */
+    .leaf-decoration {
+        width: 80px;
+    }
+
+    .leaf-top {
+        top: 40px;
+        right: -5px;
+    }
+
+    .leaf-bottom {
+        bottom: 90px;
+        left: -25px;
+    }
+
+    /* --- Envelope Display --- */
+    .envelope-display {
+        max-width: 340px;
+    }
+
+    /* --- Events Section --- */
+    .ceremony-card {
+        transform: translateX(30px);
+        margin-top: -220px;
+        width: 85%;
+        max-width: 280px;
+    }
+
+    .carta-card-ceremony .carta-content {
+        padding: 0.6rem 0.8rem 0.3rem 0.8rem;
+    }
+
+    .carta-card-ceremony .event-title {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    .carta-card-ceremony .event-time {
+        font-size: 1.2rem;
+    }
+
+    .carta-card-ceremony .church-icon {
+        width: 50px;
+    }
+
+    .party-card {
+        width: 60%;
+        max-width: 180px;
+        margin-left: -40px;
+        margin-top: -25px;
+        padding: 1.5rem 1rem;
+    }
+
+    .event-title-white {
+        font-size: 0.85rem;
+    }
+
+    .event-time-white {
+        font-size: 1.2rem;
+    }
+
+    .event-location-white {
+        font-size: 0.8rem;
+    }
+
+    .envelope-closed {
+        max-width: 380px;
+    }
+
+    /* --- Dresscode Section --- */
+    .dresscode-badge-img {
+        width: 140px;
+    }
+
+    .dresscode-details-img {
+        width: 190px;
+    }
+
+    .dresscode-details {
+        margin-left: -25px;
+    }
+
+    .dresscode-badge {
+        margin-left: 0;
+    }
+
+    /* --- Gifts Section --- */
+    .carta-card-gifts {
+        width: 100%;
+    }
+
+    .carta-card-gifts .carta-content {
+        padding: 2rem 1.2rem;
+    }
+
+    .gift-emotional {
+        font-size: 1rem;
+    }
+
+    .gift-value-line {
+        font-size: 1rem;
+    }
+
+    /* --- Countdown --- */
+    .countdown-section {
+        margin: 0.5rem 1rem;
+    }
+
+    .time-box span:first-child {
+        font-size: 2.5rem;
+    }
+
+    /* --- RSVP Envelope --- */
+    .rsvp-envelope-display {
+        max-width: 400px;
+    }
+
+    .rsvp-card-container {
+        width: 60%;
+    }
+
+    .rsvp-title {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+    }
+
+    .rsvp-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .rsvp-deadline {
+        font-size: 0.7rem;
+    }
+
+    .rsvp-form-btn {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+    }
+}
+
+/* Extra small screens (≤ 360px) */
+@media (max-width: 360px) {
+
+    .welcome-section .initial-letter.a-letter {
+        font-size: 5rem;
+    }
+
+    .welcome-section .initial-letter.j-letter {
+        font-size: 3.8rem;
+    }
+
+    .welcome-section .rest-letter {
+        font-size: 3.2rem;
+    }
+
+    .welcome-section .ampersand {
+        font-size: 2.2rem;
+    }
+
+    .welcome-date {
+        font-size: 1.8rem;
+    }
+
+    .dresscode-badge-img {
+        width: 110px;
+    }
+
+    .dresscode-details-img {
+        width: 155px;
+    }
+
+    .ceremony-card {
+        transform: translateX(20px);
+        margin-top: -180px;
+        max-width: 250px;
+    }
+
+    .party-card {
+        max-width: 160px;
+        margin-left: -30px;
+    }
+}
