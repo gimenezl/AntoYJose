@@ -1,7 +1,6 @@
-﻿/* --- Variables & Reset --- */
+﻿/* Variables globales */
 :root {
     --bg-color: #f9f7f2;
-    /* Crema suave */
     --text-color: #333333;
     --accent-color: #4a4a4a;
     --green-accent: #556b2f;
@@ -17,6 +16,7 @@
     box-sizing: border-box;
 }
 
+/* Estilos base */
 body {
     font-family: var(--font-sans);
     background-color: #f9f7f2;
@@ -39,7 +39,7 @@ a {
     color: inherit;
 }
 
-/* --- Utilities --- */
+/* Utilidades comunes */
 .section {
     min-height: auto;
     display: flex;
@@ -82,7 +82,7 @@ a {
     border-radius: 4px;
 }
 
-/* --- Section 2: Welcome (Opened Envelope) --- */
+/* --- Inicio --- */
 .welcome-section {
     padding-top: 0.5rem;
     min-height: auto;
@@ -100,7 +100,6 @@ a {
     display: inline-block;
 }
 
-/* Leaf Decorations */
 .leaf-decoration {
     position: absolute;
     width: 120px;
@@ -120,7 +119,6 @@ a {
     transform: rotate(0deg);
 }
 
-/* Typography: Great Vibes */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap');
 @import url(https://db.onlinewebfonts.com/c/af9dbbacda3360d434dcce8ab8b6c38f?family=Hello+Paris+Serif+Regular);
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
@@ -143,7 +141,6 @@ a {
 }
 
 .welcome-section .initial-letter.j-letter {
-
     font-size: 6.5rem;
     font-weight: 400;
     line-height: 1;
@@ -169,18 +166,15 @@ a {
     letter-spacing: 2px;
 }
 
-/* Envelope Display - New Design with sobre.png */
 .envelope-display {
     position: relative;
     width: 100%;
     max-width: 450px;
     margin: 0.1rem auto 0.2rem auto;
-    /* Reduced margins */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1;
-    /* Keep it low so sections below with higher z-index can clear it */
 }
 
 .envelope-container {
@@ -190,10 +184,8 @@ a {
     align-items: center;
     justify-content: center;
     overflow: visible;
-    /* Allow the photo to be visible */
 }
 
-/* Back envelope - Bottom layer */
 .envelope-back {
     width: 100%;
     height: auto;
@@ -202,21 +194,16 @@ a {
     z-index: 1;
 }
 
-/* Photo emerging from envelope - Middle layer */
 .photo-container {
     position: absolute;
     bottom: 25%;
-    /* Start higher inside the envelope */
     left: 50%;
     transform: translateX(-50%);
     width: 55%;
     z-index: 2;
-    /* Above back envelope, below front flap */
     transition: bottom 1.5s ease-out;
-    /* Animate bottom property to move upward */
 }
 
-/* Front envelope flap - Top layer */
 .envelope-front {
     width: 100%;
     height: auto;
@@ -225,9 +212,7 @@ a {
     top: 0;
     left: 0;
     z-index: 3;
-    /* On top of everything to cover the photo */
     pointer-events: none;
-    /* Allow clicks to pass through if needed */
 }
 
 .couple-photo {
@@ -238,7 +223,6 @@ a {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Music Player - Complete */
 .music-player {
     text-align: center;
     margin-top: -80px;
@@ -255,7 +239,6 @@ a {
     color: var(--text-color);
 }
 
-/* Progress Bar */
 .progress-container {
     width: 90%;
     margin: 0 auto 0.8rem auto;
@@ -277,7 +260,6 @@ a {
     transition: width 0.1s linear;
 }
 
-/* Player Controls Container */
 .player-controls {
     display: flex;
     align-items: center;
@@ -286,7 +268,6 @@ a {
     width: 100%;
 }
 
-/* Side Buttons (Previous/Next) - Decorative */
 .control-btn-side {
     background: none;
     border: none;
@@ -299,7 +280,6 @@ a {
     justify-content: center;
 }
 
-/* Main Play/Pause Button */
 .play-pause-btn-main {
     background: none;
     border: none;
@@ -328,7 +308,6 @@ a {
     left: 0;
 }
 
-/* Repeat Button - Decorative */
 .control-btn-repeat {
     background: none;
     border: none;
@@ -341,9 +320,6 @@ a {
     justify-content: center;
 }
 
-
-
-/* --- Section 3: Formal Card --- */
 .card-section {
     background-color: transparent;
     border-top: none;
@@ -360,8 +336,6 @@ a {
     box-shadow: none;
 }
 
-/* Image Card Overrides */
-/* Image Card Overrides */
 .image-card-container {
     padding: 0 !important;
     border: none !important;
@@ -371,11 +345,8 @@ a {
     flex-direction: column;
     align-items: center;
     position: relative;
-    /* Ensure container is a positioning context */
     overflow: hidden;
-    /* rounded corners for the whole card */
     border-radius: 8px;
-    /* match image border radius */
 }
 
 .card-bg-img {
@@ -386,27 +357,19 @@ a {
     top: 0;
     left: 0;
     z-index: -1;
-    /* Behind text */
     height: 100%;
-    /* Force fill container height */
     object-fit: cover;
-    /* Cover the area */
     object-fit: cover;
-    /* Cover the area */
 }
 
 .card-img-shadow {
     width: 85%;
-    /* Reduced width */
     max-width: 350px;
-    /* Max width constraint */
     margin: 0 auto;
-    /* Center alignment */
     height: auto;
     display: block;
     border-radius: 8px;
     mix-blend-mode: multiply;
-    /* Blend white background */
 }
 
 .ceremony-btn {
@@ -415,7 +378,6 @@ a {
     z-index: 10;
 }
 
-/* --- Carta Card (Carta.png background) --- */
 .carta-card {
     position: relative;
     display: inline-block;
@@ -424,31 +386,25 @@ a {
     overflow: visible;
     background-image: url('Carta.png');
     background-size: cover;
-    /* Back to cover for better quality */
     background-repeat: no-repeat;
     background-position: center;
     border: none !important;
     box-shadow: none !important;
-    /* Remove shadow to avoid border-like look */
 }
 
 .carta-bg {
     display: none;
-    /* Hidden because we use background-image now */
 }
 
 .carta-content {
     position: relative;
-    /* Changed from absolute to give height to parent */
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2rem 1.5rem 2.5rem 1.5rem;
-    /* Increased bottom padding to contain button better */
     gap: 12px;
-    /* Increased gap for better spacing */
 }
 
 .carta-card .bible-verse {
@@ -502,7 +458,6 @@ a {
     margin-top: 0.15rem;
 }
 
-/* Ceremony-specific carta card */
 .carta-card-ceremony {
     width: 100%;
     max-width: 340px;
@@ -545,7 +500,6 @@ a {
 
 .carta-card-ceremony .church-icon {
     width: 65px;
-    /* Ajustado para caber en la carta */
     height: auto;
     opacity: 0.85;
 }
@@ -574,33 +528,25 @@ a {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Overlay content styling */
 .card-content-overlay {
     position: relative;
     z-index: 1;
-    /* On top of image */
     width: 100%;
     height: 100%;
     padding: 1.5rem 1rem;
-    /* Reduced from 2rem 1.5rem */
-    /* Reduced from 3rem */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Bible Verse Styling */
 .bible-verse {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.4rem;
-    /* Reduced from 1.8rem */
     font-weight: 400;
-    /* Lighter weight */
     line-height: 1.3;
     color: var(--text-color);
     margin-bottom: 0.3rem;
-    /* Tighter padding */
     font-style: italic;
 }
 
@@ -609,14 +555,11 @@ a {
     font-size: 1.1rem;
     color: #666;
     margin-bottom: 1rem;
-    /* Reduced from 1.5rem */
     font-weight: 400;
 }
 
-/* Names Container */
 .names-container {
     margin: 0.5rem 0;
-    /* Reduced from 1rem */
 }
 
 .bride-name,
@@ -645,10 +588,8 @@ a {
     letter-spacing: 2px;
     color: var(--text-color);
     margin-top: 1rem;
-    /* Reduced from 1.5rem */
 }
 
-/* Legacy styles kept for other sections */
 .intro-text {
     font-size: 1rem;
     font-style: italic;
@@ -678,7 +619,6 @@ a {
     padding: 0.5rem 1rem;
 }
 
-/* --- Section 4: Events --- */
 .events-section {
     min-height: auto;
     padding: 0 1rem 1.5rem 1rem;
@@ -695,7 +635,6 @@ a {
     align-items: center;
 }
 
-/* Sobre cerrado de fondo */
 .envelope-closed {
     width: 100%;
     max-width: 500px;
@@ -710,7 +649,6 @@ a {
     display: block;
 }
 
-/* Tarjeta Ceremonia (rectangular blanca) */
 .ceremony-card {
     position: relative;
     z-index: 2;
@@ -719,7 +657,6 @@ a {
     width: 90%;
     max-width: 370px;
     transform: translateX(65px);
-    /* Shifted to the right as original layout */
     margin-top: -300px;
     margin-bottom: 0;
 }
@@ -754,7 +691,6 @@ a {
 
 .event-icon-img {
     margin: 0.5rem 0;
-    /* Reduced from 1.2rem */
 }
 
 .church-icon,
@@ -762,7 +698,6 @@ a {
     width: 80px;
     height: auto;
     opacity: 0.8;
-    /* Prevent broken image borders */
     color: transparent;
     border: none;
     outline: none;
@@ -790,10 +725,8 @@ a {
     color: #fff;
 }
 
-/* Tarjeta Fiesta (ovalada verde) */
 .party-card {
     background: #8c8866;
-    /* Same green as the envelope */
     border-radius: 50%;
     padding: 2rem 1.5rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -801,14 +734,11 @@ a {
     position: relative;
     z-index: 3;
     margin-top: -35px;
-    /* Original overlap with ceremony card */
     margin-right: 0;
     margin-left: -60px;
-    /* Shifted to the left as original layout */
     width: 70%;
     max-width: 240px;
     aspect-ratio: 1 / 1.35;
-    /* Original taller oval shape */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -865,7 +795,6 @@ a {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Section 5: Dress Code (Overlapping Cards) --- */
 .dress-code-section {
     min-height: auto;
     padding: 2rem 1rem;
@@ -881,7 +810,6 @@ a {
     padding: 1rem 0;
 }
 
-/* Top row: the two dresscode cards */
 .dresscode-cards-row {
     display: flex;
     align-items: flex-end;
@@ -889,7 +817,6 @@ a {
     width: 100%;
 }
 
-/* Dresscode Badge (left, medium size, positioned higher) */
 .dresscode-badge {
     position: relative;
     z-index: 2;
@@ -905,7 +832,6 @@ a {
     filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.15));
 }
 
-/* Dresscode Details Card (right, largest, overlapping badge) */
 .dresscode-details {
     position: relative;
     z-index: 1;
@@ -921,7 +847,6 @@ a {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
-/* Pinterest Pin Card (bottom-left, smallest, no overlap) */
 .dresscode-pin {
     display: block;
     text-decoration: none;
@@ -974,12 +899,10 @@ a {
     font-style: italic;
 }
 
-/* --- Section 7: Gifts --- */
 .gifts-section {
     padding: 1.5rem 1rem;
 }
 
-/* Gifts Carta Card */
 .carta-card-gifts {
     width: 95%;
     max-width: 420px;
@@ -1025,7 +948,6 @@ a {
     letter-spacing: 0.5px;
 }
 
-/* --- Solo Adultos --- */
 .no-kids-section {
     min-height: auto;
     padding: 1rem 1rem;
@@ -1052,7 +974,6 @@ a {
     letter-spacing: 0.5px;
 }
 
-/* --- Section 8: Countdown --- */
 .countdown-section {
     background-color: rgba(197, 186, 166, 0.15);
     border: 1px solid rgba(197, 186, 166, 0.25);
@@ -1103,7 +1024,6 @@ a {
     margin-top: 1.5rem;
 }
 
-/* --- Section 9: RSVP (Envelope with Carta) --- */
 .rsvp-section {
     padding-bottom: 2rem;
     padding-top: 1rem;
@@ -1119,7 +1039,6 @@ a {
     justify-content: center;
 }
 
-/* Card inside envelope */
 .rsvp-card-container {
     position: absolute;
     bottom: 45%;
@@ -1206,7 +1125,6 @@ footer {
     color: #999;
 }
 
-/* Premium Reveal Animation */
 .reveal {
     opacity: 0;
     transform: translateY(30px) scale(0.98);
@@ -1218,19 +1136,13 @@ footer {
     transform: translateY(0) scale(1);
 }
 
-/* Extra polishing for cards */
 .carta-card {
     border: none !important;
     box-shadow: none !important;
     background-color: transparent !important;
 }
 
-/* =============================================
-   MOBILE RESPONSIVE — screens ≤ 480px
-   ============================================= */
 @media (max-width: 480px) {
-
-    /* --- Header Names --- */
     .welcome-section .welcome-header .main-names {
         font-size: 3.5rem;
         flex-wrap: wrap;
@@ -1259,7 +1171,6 @@ footer {
         font-size: 2.2rem;
     }
 
-    /* --- Leaf Decorations --- */
     .leaf-decoration {
         width: 80px;
     }
@@ -1274,12 +1185,10 @@ footer {
         left: -25px;
     }
 
-    /* --- Envelope Display --- */
     .envelope-display {
         max-width: 340px;
     }
 
-    /* --- Events Section --- */
     .envelope-closed {
         max-width: 290px;
     }
@@ -1349,7 +1258,6 @@ footer {
         padding: 4px 16px;
     }
 
-    /* --- Dresscode Section --- */
     .dresscode-badge-img {
         width: 140px;
     }
@@ -1366,7 +1274,6 @@ footer {
         margin-left: 0;
     }
 
-    /* --- Gifts Section --- */
     .carta-card-gifts {
         width: 100%;
     }
@@ -1383,7 +1290,6 @@ footer {
         font-size: 1rem;
     }
 
-    /* --- Countdown --- */
     .countdown-section {
         margin: 0.5rem 1rem;
     }
@@ -1392,7 +1298,6 @@ footer {
         font-size: 2.5rem;
     }
 
-    /* --- RSVP Envelope --- */
     .rsvp-envelope-display {
         max-width: 400px;
     }
@@ -1420,9 +1325,7 @@ footer {
     }
 }
 
-/* Extra small screens (≤ 360px) */
 @media (max-width: 360px) {
-
     .welcome-section .initial-letter.a-letter {
         font-size: 5rem;
     }

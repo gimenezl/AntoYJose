@@ -1,19 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antonella & José - Nuestra Boda</title>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- FUENTE A (Hello Paris Serif Regular) -->
     <link href="https://db.onlinewebfonts.com/c/af9dbbacda3360d434dcce8ab8b6c38f?family=Hello+Paris+Serif+Regular"
         rel="stylesheet">
-
-    <!-- FUENTE GENERAL (TT Lovelies Script W10 Regular) -->
     <link href="https://db.onlinewebfonts.com/c/bf80a5f83b4e976a40c0230bd43eeb1e?family=TT+Lovelies+Script+W10+Regular"
         rel="stylesheet">
     <style>
@@ -22,7 +16,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
     </style>
-    <!-- FUENTE J (Eagle Lake) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
@@ -31,23 +24,17 @@
 <body>
     <div class="leaf-container" id="leaf-container"></div>
 
-    <!-- SECCIÓN BIENVENIDA -->
+    <!-- Bienvenida -->
     <section id="welcome" class="section welcome-section">
         <div class="content-wrapper">
             <div class="welcome-header">
-
                 <img src="hoja.png" alt="" class="leaf-decoration leaf-top">
-
                 <h1 class="main-names">
                     <span class="initial-letter a-letter">A</span><span class="rest-letter">ntonella</span>
-
                     <span class="ampersand">&</span>
-
                     <span class="initial-letter j-letter">J</span><span class="rest-letter">osé</span>
                 </h1>
-
                 <img src="hoja.png" alt="" class="leaf-decoration leaf-bottom">
-
                 <p class="welcome-date">04.07.2026</p>
             </div>
         </div>
@@ -60,27 +47,19 @@
                 <img src="sobre - copia.png" alt="Solapa del sobre" class="envelope-front">
             </div>
         </div>
-
         <div class="music-player">
             <p class="music-text">Dale play para escuchar nuestra canción</p>
-
-            <!-- Progress Bar -->
             <div class="progress-container">
                 <div class="progress-bar">
                     <div id="progress-fill" class="progress-fill"></div>
                 </div>
             </div>
-
-            <!-- Player Controls -->
             <div class="player-controls">
-                <!-- Previous Button (decorative) -->
                 <button class="control-btn-side" disabled>
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
                     </svg>
                 </button>
-
-                <!-- Play/Pause Button (functional) -->
                 <button id="music-toggle" class="play-pause-btn-main" aria-label="Reproducir música">
                     <svg id="play-icon" width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
                         <circle cx="12" cy="12" r="11" fill="currentColor" />
@@ -92,15 +71,11 @@
                         <rect x="13" y="7" width="2" height="10" fill="#fff" />
                     </svg>
                 </button>
-
-                <!-- Next Button (decorative) -->
                 <button class="control-btn-side" disabled>
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
                     </svg>
                 </button>
-
-                <!-- Repeat Button (decorative) -->
                 <button class="control-btn-repeat" disabled>
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M17 1l4 4-4 4" />
@@ -114,7 +89,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 3 — TARJETA PRINCIPAL -->
+    <!-- Tarjeta principal -->
     <section id="main-card" class="section card-section reveal">
         <div class="content-wrapper">
             <div class="carta-card fade-in">
@@ -132,15 +107,12 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 4 — CEREMONIA Y FIESTA -->
+    <!-- Info eventos -->
     <section id="events" class="section events-section reveal">
         <div class="events-container">
-            <!-- Sobre cerrado de fondo -->
             <div class="envelope-closed">
                 <img src="sobrecerrado.png" alt="Sobre cerrado" class="closed-envelope-img">
             </div>
-
-            <!-- Tarjeta Ceremonia (rectangular blanca) -->
             <div class="ceremony-card">
                 <div class="carta-card carta-card-ceremony">
                     <div class="carta-content">
@@ -155,8 +127,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tarjeta Fiesta (ovalada verde) -->
             <div class="party-card">
                 <h3 class="event-title-white">FIESTA</h3>
                 <p class="event-time-white">13:30</p>
@@ -170,23 +140,17 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 5 — DRESS CODE -->
+    <!-- Codigo de vestimenta -->
     <section id="dress-code" class="section dress-code-section reveal">
         <div class="dresscode-stack fade-in">
-            <!-- Top row: dresscode cards overlapping -->
             <div class="dresscode-cards-row">
-                <!-- Dresscode badge (left, higher) -->
                 <div class="dresscode-badge">
                     <img src="dresscode.png" alt="Dress Code" class="dresscode-badge-img">
                 </div>
-
-                <!-- Dresscode details card (right, largest, overlapping) -->
                 <div class="dresscode-details">
                     <img src="dresscode2.png" alt="Elegante con un toque verde" class="dresscode-details-img">
                 </div>
             </div>
-
-            <!-- Pinterest Pin (bottom-left, smallest, no overlap) -->
             <a href="https://pin.it/1QA7QFv5I" target="_blank" rel="noopener noreferrer" class="dresscode-pin">
                 <div class="pinterest-pin-card">
                     <div class="pinterest-icon">
@@ -203,7 +167,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 7 — GIFTS -->
+    <!-- Regalos -->
     <section id="gifts" class="section gifts-section reveal">
         <div class="content-wrapper fade-in">
             <div class="carta-card carta-card-gifts">
@@ -218,8 +182,6 @@
             </div>
         </div>
     </section>
-
-    <!-- SECCIÓN — SOLO ADULTOS -->
     <section class="section no-kids-section reveal">
         <div class="no-kids-content fade-in">
             <img src="noninos.png" alt="Solo adultos" class="no-kids-icon">
@@ -229,7 +191,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 8 — CONTADOR REGRESIVO -->
+    <!-- Contador -->
     <section id="countdown" class="section countdown-section reveal">
         <div class="content-wrapper fade-in">
             <h2>FALTAN</h2>
@@ -251,7 +213,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 9 — CONFIRMACIÓN -->
+    <!-- Confirmacion asistencia -->
     <section id="rsvp" class="section rsvp-section reveal">
         <div class="rsvp-envelope-display fade-in">
             <div class="envelope-container">
@@ -270,11 +232,9 @@
             </div>
         </div>
     </section>
-
     <footer>
         <p>Diseñado con ❤️ para Anto Y José</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 
