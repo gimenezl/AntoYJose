@@ -1,4 +1,4 @@
-﻿/* Variables globales */
+/* Variables globales */
 :root {
     --bg-color: #f9f7f2;
     --text-color: #333333;
@@ -184,6 +184,7 @@ a {
     align-items: center;
     justify-content: center;
     overflow: visible;
+    padding-bottom: 1px;
 }
 
 .envelope-back {
@@ -199,7 +200,7 @@ a {
     bottom: 25%;
     left: 50%;
     transform: translateX(-50%);
-    width: 55%;
+    width: 60%;
     z-index: 2;
     transition: bottom 1.5s ease-out;
 }
@@ -628,6 +629,7 @@ a {
 
 .events-container {
     position: relative;
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
     display: flex;
@@ -652,13 +654,10 @@ a {
 .ceremony-card {
     position: relative;
     z-index: 2;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+    width: 75%;
     max-width: 370px;
-    transform: translateX(65px);
-    margin-top: -300px;
-    margin-bottom: 0;
+    margin-right: -10%;
+    margin-top: -55%;
 }
 
 .event-title {
@@ -728,17 +727,16 @@ a {
 .party-card {
     background: #8c8866;
     border-radius: 50%;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
     z-index: 3;
-    margin-top: -35px;
-    margin-right: 0;
-    margin-left: -60px;
-    width: 70%;
+    margin-left: -35%;
+    margin-top: -15%;
+    width: 65%;
     max-width: 240px;
-    aspect-ratio: 1 / 1.35;
+    aspect-ratio: 1 / 1.4;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1194,68 +1192,69 @@ footer {
     }
 
     .ceremony-card {
-        transform: translateX(45px);
+        width: 75%;
+        max-width: 260px;
+        margin-right: -10%;
         margin-top: -180px;
-        width: 65%;
-        max-width: 210px;
+        left: 20%;
     }
 
     .carta-card-ceremony .carta-content {
-        padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+        padding: 0.5em 0.5em 0.2em 0.5em;
         gap: 0;
     }
 
     .carta-card-ceremony .event-title {
-        font-size: 0.7rem;
+        font-size: 0.75em;
         letter-spacing: 1px;
     }
 
     .carta-card-ceremony .event-time {
-        font-size: 1rem;
+        font-size: 1.1em;
     }
 
     .carta-card-ceremony .event-location {
-        font-size: 0.75rem;
-        margin-bottom: 0.1rem;
+        font-size: 0.8em;
+        margin-bottom: 0.1em;
     }
 
     .carta-card-ceremony .church-icon {
-        width: 35px;
+        width: 40px;
     }
 
     .carta-card-ceremony .btn-location-outline {
-        font-size: 0.65rem;
-        padding: 3px 14px;
+        font-size: 0.7em;
+        padding: 0.4em 1.2em;
     }
 
     .party-card {
-        width: 50%;
-        max-width: 150px;
-        margin-left: -50px;
-        margin-top: -10px;
-        padding: 1rem 0.7rem;
+        width: 65%;
+        max-width: 180px;
+        margin-left: -20%;
+        margin-top: -50px;
+        padding: 2.5em 1.2em;
     }
 
     .event-title-white {
-        font-size: 0.7rem;
+        font-size: 0.75em;
         letter-spacing: 1px;
     }
 
     .event-time-white {
-        font-size: 1rem;
+        font-size: 1.1em;
     }
 
     .event-location-white {
-        font-size: 0.7rem;
+        font-size: 0.8em;
     }
 
     .party-card .party-icon {
-        width: 40px;
+        width: 45px;
     }
 
     .btn-location-white {
-        font-size: 0.7rem;
-        padding: 4px 16px;
+        font-size: 0.7em;
+        padding: 0.4em 1.2em;
     }
 
     .dresscode-badge-img {
@@ -1351,14 +1350,17 @@ footer {
     }
 
     .ceremony-card {
-        transform: translateX(35px);
-        margin-top: -160px;
-        max-width: 190px;
+        width: 80%;
+        max-width: 200px;
+        margin-top: -60%;
+        margin-right: -5%;
     }
 
     .party-card {
-        max-width: 130px;
-        margin-left: -40px;
+        width: 70%;
+        max-width: 150px;
+        margin-top: -5%;
+        margin-left: -15%;
     }
 
     .dresscode-badge-img {
