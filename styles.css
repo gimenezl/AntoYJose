@@ -25,6 +25,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100vw;
 }
 
 h1,
@@ -853,9 +854,7 @@ a {
     z-index: 3;
     flex-shrink: 0;
     transition: transform 0.3s ease;
-    margin-top: 0.8rem;
-    margin-right: auto;
-    margin-left: 1.5rem;
+    margin: 0.8rem auto 0 auto;
 }
 
 .dresscode-pin:hover {
@@ -1039,7 +1038,7 @@ a {
 
 .rsvp-card-container {
     position: absolute;
-    bottom: 45%;
+    bottom: 38%;
     left: 50%;
     transform: translateX(-50%);
     width: 65%;
@@ -1196,7 +1195,7 @@ footer {
         max-width: 260px;
         margin-right: -10%;
         margin-top: -180px;
-        left: 20%;
+        left: 15%;
     }
 
     .carta-card-ceremony .carta-content {
@@ -1230,7 +1229,7 @@ footer {
     .party-card {
         width: 65%;
         max-width: 180px;
-        margin-left: -20%;
+        margin-left: -15%;
         margin-top: -50px;
         padding: 2.5em 1.2em;
     }
@@ -1308,19 +1307,50 @@ footer {
     .rsvp-title {
         font-size: 0.7rem;
         letter-spacing: 1.5px;
+        margin-bottom: 1rem;
     }
 
     .rsvp-subtitle {
         font-size: 0.85rem;
+        margin-bottom: 1rem;
     }
 
     .rsvp-deadline {
         font-size: 0.7rem;
+        margin-bottom: 1rem;
     }
 
     .rsvp-form-btn {
         font-size: 0.75rem;
         padding: 6px 16px;
+    }
+
+    .carta-card-rsvp,
+    .rsvp-card {
+        height: auto;
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .carta-card-rsvp .carta-content,
+    .rsvp-form {
+        gap: 0.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group label {
+        margin-bottom: 0.1rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        margin-top: 0;
     }
 }
 
@@ -1379,4 +1409,10 @@ footer {
         width: 58%;
         bottom: 42%;
     }
+}
+
+.white-heart {
+    color: white;
+    -webkit-text-fill-color: white;
+    text-shadow: 0 0 1px #000;
 }

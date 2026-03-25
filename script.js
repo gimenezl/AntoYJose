@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const welcomeSection = document.getElementById('welcome');
     welcomeSection.classList.remove('hidden');
     welcomeSection.classList.add('visible');
@@ -75,7 +75,7 @@
     const photoContainer = document.querySelector('.photo-container');
     if (photoContainer) {
         setTimeout(() => {
-            photoContainer.style.bottom = '50%';
+            photoContainer.style.bottom = '42%';
         }, 800);
     }
 });
